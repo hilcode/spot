@@ -1,0 +1,109 @@
+name:                spot
+version:             0.0.0.1
+github:              hilcode/spot
+homepage:            https://github.com/hilcode/spot#readme
+copyright:           2020 Hilco Wijbenga
+license:             GPL-3
+author:              Hilco Wijbenga
+maintainer:          Hilco Wijbenga
+category:            Utility
+
+extra-source-files:
+- README.md
+
+default-extensions:
+- BangPatterns
+- DataKinds
+- DeriveGeneric
+- FlexibleContexts
+- FlexibleInstances
+- FunctionalDependencies
+- GADTs
+- InstanceSigs
+- KindSignatures
+- LambdaCase
+- MultiParamTypeClasses
+- MultiWayIf
+- NoMonomorphismRestriction
+- OverloadedStrings
+- ScopedTypeVariables
+- Strict
+- TupleSections
+- UndecidableInstances
+
+ghc-options:
+- -Werror
+- -Wall
+- -Wcompat
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wredundant-constraints
+- -Wtabs
+- -Wno-name-shadowing
+
+dependencies:
+- base >= 4.7 && < 5
+- containers
+- directory
+- hedgehog
+- hspec
+- hw-hspec-hedgehog
+- monads-tf
+- pathtype
+- text
+- text-show
+- transformers
+- vector
+
+executables:
+  spot:
+    source-dirs:
+      - src/main/haskell
+    main: Main.hs
+    dependencies:
+      - spot
+
+library:
+  source-dirs:
+    - src/main/haskell
+  exposed-modules:
+    - Hilcode.CharSet
+    - Hilcode.ExpandedPath
+    - Hilcode.FilePathType
+    - Hilcode.Glob
+    - Hilcode.GlobPart
+    - Hilcode.GlobParts
+    - Hilcode.Internal.Queue
+    - Hilcode.Internal.Thread
+    - Hilcode.Misc
+    - Hilcode.Nullable
+    - Hilcode.PathComponentGlob
+    - Hilcode.PathComponentGlobs
+    - Hilcode.Result
+    - Hilcode.SimpleGlob
+    - Hilcode.Thread
+
+tests:
+  test:
+    source-dirs:
+      - src/test/haskell
+    main: Spec.hs
+    dependencies:
+      - base
+      - spot
+    other-modules:
+      - Hilcode.CharSetSpec
+      - Hilcode.ExpandedPathSpec
+      - Hilcode.FilePathTypeSpec
+      - Hilcode.GlobPartSpec
+      - Hilcode.GlobPartsSpec
+      - Hilcode.GlobSpec
+      - Hilcode.MiscSpec
+      - Hilcode.PathComponentGlobSpec
+      - Hilcode.PathComponentGlobsSpec
+      - Hilcode.QueueSpec
+      - Hilcode.SimpleGlobSpec
+      - Hilcode.ThreadSpec
+      - Hilcode.Util.Checks
+      - Hilcode.Util.Generators
+      - Hilcode.Util.Literals

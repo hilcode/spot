@@ -1,0 +1,8 @@
+resolver: lts-15.1
+
+compiler: ghc-8.6.5
+
+packages:
+- .
+
+flags: {}

@@ -1,0 +1,150 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 6c18452d66b699e46f9140c0c9d263ff1a4314dfe9e8cc9c3bcbbe46d5d200c6
+
+name:           spot
+version:        0.0.0.1
+category:       Utility
+homepage:       https://github.com/hilcode/spot#readme
+bug-reports:    https://github.com/hilcode/spot/issues
+author:         Hilco Wijbenga
+maintainer:     Hilco Wijbenga
+copyright:      2020 Hilco Wijbenga
+license:        GPL-3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/hilcode/spot
+
+library
+  exposed-modules:
+      Hilcode.CharSet
+      Hilcode.ExpandedPath
+      Hilcode.FilePathType
+      Hilcode.Glob
+      Hilcode.GlobPart
+      Hilcode.GlobParts
+      Hilcode.Internal.Queue
+      Hilcode.Internal.Thread
+      Hilcode.Misc
+      Hilcode.Nullable
+      Hilcode.PathComponentGlob
+      Hilcode.PathComponentGlobs
+      Hilcode.Result
+      Hilcode.SimpleGlob
+      Hilcode.Thread
+  other-modules:
+      Hilcode.FileSystem
+      Hilcode.MonadFileSystem
+      Hilcode.Parser
+      Hilcode.Queue
+      Main
+      Paths_spot
+  hs-source-dirs:
+      src/main/haskell
+  default-extensions: BangPatterns DataKinds DeriveGeneric FlexibleContexts FlexibleInstances FunctionalDependencies GADTs InstanceSigs KindSignatures LambdaCase MultiParamTypeClasses MultiWayIf NoMonomorphismRestriction OverloadedStrings ScopedTypeVariables Strict TupleSections UndecidableInstances
+  ghc-options: -Werror -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints -Wtabs -Wno-name-shadowing
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , directory
+    , hedgehog
+    , hspec
+    , hw-hspec-hedgehog
+    , monads-tf
+    , pathtype
+    , text
+    , text-show
+    , transformers
+    , vector
+  default-language: Haskell2010
+
+executable spot
+  main-is: Main.hs
+  other-modules:
+      Hilcode.CharSet
+      Hilcode.ExpandedPath
+      Hilcode.FilePathType
+      Hilcode.FileSystem
+      Hilcode.Glob
+      Hilcode.GlobPart
+      Hilcode.GlobParts
+      Hilcode.Internal.Queue
+      Hilcode.Internal.Thread
+      Hilcode.Misc
+      Hilcode.MonadFileSystem
+      Hilcode.Nullable
+      Hilcode.Parser
+      Hilcode.PathComponentGlob
+      Hilcode.PathComponentGlobs
+      Hilcode.Queue
+      Hilcode.Result
+      Hilcode.SimpleGlob
+      Hilcode.Thread
+      Paths_spot
+  hs-source-dirs:
+      src/main/haskell
+  default-extensions: BangPatterns DataKinds DeriveGeneric FlexibleContexts FlexibleInstances FunctionalDependencies GADTs InstanceSigs KindSignatures LambdaCase MultiParamTypeClasses MultiWayIf NoMonomorphismRestriction OverloadedStrings ScopedTypeVariables Strict TupleSections UndecidableInstances
+  ghc-options: -Werror -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints -Wtabs -Wno-name-shadowing
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , directory
+    , hedgehog
+    , hspec
+    , hw-hspec-hedgehog
+    , monads-tf
+    , pathtype
+    , spot
+    , text
+    , text-show
+    , transformers
+    , vector
+  default-language: Haskell2010
+
+test-suite test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Hilcode.CharSetSpec
+      Hilcode.ExpandedPathSpec
+      Hilcode.FilePathTypeSpec
+      Hilcode.GlobPartSpec
+      Hilcode.GlobPartsSpec
+      Hilcode.GlobSpec
+      Hilcode.MiscSpec
+      Hilcode.PathComponentGlobSpec
+      Hilcode.PathComponentGlobsSpec
+      Hilcode.QueueSpec
+      Hilcode.SimpleGlobSpec
+      Hilcode.ThreadSpec
+      Hilcode.Util.Checks
+      Hilcode.Util.Generators
+      Hilcode.Util.Literals
+  hs-source-dirs:
+      src/test/haskell
+  default-extensions: BangPatterns DataKinds DeriveGeneric FlexibleContexts FlexibleInstances FunctionalDependencies GADTs InstanceSigs KindSignatures LambdaCase MultiParamTypeClasses MultiWayIf NoMonomorphismRestriction OverloadedStrings ScopedTypeVariables Strict TupleSections UndecidableInstances
+  ghc-options: -Werror -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints -Wtabs -Wno-name-shadowing
+  build-depends:
+      base
+    , containers
+    , directory
+    , hedgehog
+    , hspec
+    , hw-hspec-hedgehog
+    , monads-tf
+    , pathtype
+    , spot
+    , text
+    , text-show
+    , transformers
+    , vector
+  default-language: Haskell2010
